@@ -7,10 +7,12 @@ inherit eutils
 DESCRIPTION="A readahead implementation optimized for solid state discs"
 HOMEPAGE="http://code.google.com/p/sreadahead/"
 SRC_URI="http://sreadahead.googlecode.com/files/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
 DEPEND=""
 RDEPEND=""
 
@@ -25,4 +27,14 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc COPYING README
+	newinitd ${FILESDIR}/sreadahead.rc sreadahead
+	newinitd ${FILESDIR}/sreadahead-pack.rc sreadahead-pack
+}
+
+pkg_postinst() {
+	einfo "To add sreadahead to your runlevels:"
+	einfo "  # rc-update add sreadahead boot"
+	einfo "  # rc-update add sreadahead-pack default"
+	einfo "Don't forget to rebuild your kernel after applying the sreadahead patch."
 }
