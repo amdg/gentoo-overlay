@@ -1,0 +1,8 @@
+diff -urN sreadahead-0.03.orig/Makefile sreadahead-0.03/Makefile
+--- sreadahead-0.03.orig/Makefile	2008-11-14 19:43:26.000000000 +0000
++++ sreadahead-0.03/Makefile	2009-01-12 07:12:39.000000000 +0000
+@@ -1,4 +1,3 @@
+-CFLAGS=-Os -march=i686 -g -Wall
+ PROGS=sreadahead-pack sreadahead
+ 
+ all: $(PROGS)
