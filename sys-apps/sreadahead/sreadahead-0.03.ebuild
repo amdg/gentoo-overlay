@@ -33,8 +33,9 @@ src_install() {
 }
 
 pkg_postinst() {
+	einfo "This package requires a kernel built with the sreadahead patch."
+	einfo ""
 	einfo "To add sreadahead to your runlevels:"
 	einfo "  # rc-update add sreadahead boot"
 	einfo "  # rc-update add sreadahead-pack default"
-	einfo "Don't forget to rebuild your kernel after applying the sreadahead patch."
 }
