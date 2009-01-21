@@ -16,24 +16,22 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-src_unpack() {
-	unpack ${A}
-	epatch ${FILESDIR}/001-remove-hardcoded-cflags.patch
-}
-
 src_compile() {
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc COPYING README
+	dodoc COPYING README 0001-superreadahead-patch.patch
 	newinitd ${FILESDIR}/sreadahead.rc sreadahead
 	newinitd ${FILESDIR}/sreadahead-pack.rc sreadahead-pack
 }
 
 pkg_postinst() {
-	einfo "This package requires a kernel built with the sreadahead patch."
+	einfo "Sreadahead requires a kernel built with the superreadahead patch,"
+	einfo "which can be found in /usr/share/doc/${PF}"
+	einfo ""
+	einfo "Note that only ext3 partitions are currently supported."
 	einfo ""
 	einfo "To add sreadahead to your runlevels:"
 	einfo "  # rc-update add sreadahead boot"
