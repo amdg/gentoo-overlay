@@ -25,6 +25,11 @@ RDEPEND=">=dev-libs/boehm-gc-7.1
 	xmlparser? ( >=dev-libs/xerces-c-3.0.0-r1 )
 	graphviz? ( >=media-gfx/graphviz-2.20.3 )"
 
+src_unpack() {
+	unpack ${A}
+	epatch ${FILESDIR}/fix_sed_ldflags.patch
+}
+
 src_compile() {
 	if use compiler; then
 		uses_php5
@@ -33,9 +38,9 @@ src_compile() {
 
 	emake || die "emake failed"
 
-	if use doc; then
+#	if use doc; then
 		# build documentation here
-	fi
+#	fi
 }
 
 src_install() {
