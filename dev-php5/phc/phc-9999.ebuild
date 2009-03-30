@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils depend.php
+inherit eutils depend.php subversion
 
 DESCRIPTION="An open source compiler for PHP with support for plugins"
 HOMEPAGE="http://phpcompiler.org/"
-SRC_URI="http://phpcompiler.org/src/archive/${P}.tar.gz"
+ESVN_REPO_URI="http://phc.googlecode.com/svn/trunk"
 LICENSE="BSD"
 
 SLOT="0"
@@ -27,11 +27,6 @@ RDEPEND=">=dev-libs/boehm-gc-7.1
 	compiler? ( >=dev-lang/php-5.2.8-r1[embed] )
 	xmlparser? ( >=dev-libs/xerces-c-3.0.0-r1 )
 	graphviz? ( >=media-gfx/graphviz-2.20.3 )"
-
-src_unpack() {
-	unpack ${A}
-	epatch ${FILESDIR}/fix_sed_ldflags.patch
-}
 
 src_compile() {
 	if use compiler; then
