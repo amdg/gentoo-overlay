@@ -1,0 +1,19 @@
+#!/sbin/runscript
+# Copyright 2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+description="Start sreadahead daemon"
+
+depend() {
+	need localmount
+	before clock bootmisc consolefont keymaps rmnologin serial urandom
+}
+
+start() {
+	ebegin "Starting sreadahead"
+	/sbin/sreadahead
+	eend $?
+}
+
+# vim: ts=4 sw=4
