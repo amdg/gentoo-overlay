@@ -19,7 +19,7 @@ RDEPEND=">=dev-lang/perl-5.8
 	|| ( >=net-misc/curl-7.19.4 >=www-client/lynx-2.8.6-r2 )"
 
 src_unpack() {
-	cp ${DISTDIR}/${A} ${S}
+	cp "${DISTDIR}"/${A} "${S}"
 }
 
 src_compile() {
@@ -27,5 +27,5 @@ src_compile() {
 }
 
 src_install() {
-	newbin ${S} ttytter
+	newbin "${S}" ttytter
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<!-- 
+$Header: /var/cvsroot/gentoo-x86/skel.metadata.xml,v 1.18 2008/07/28 19:27:05 cardoe Exp $
+-->
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+  <email>amdg@lavabit.com</email>
+</maintainer>
+</pkgmetadata>
