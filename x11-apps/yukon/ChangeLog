@@ -3,5 +3,8 @@
 # $Header: $
 
   27 Jan 2010; Anna Gabutero <amdg@lavabit.com> yukon-9999.ebuild:
+  Adding note about cache=8192 to make seom-player work
+
+  27 Jan 2010; Anna Gabutero <amdg@lavabit.com> yukon-9999.ebuild:
   Fixing path to seom-filter
 

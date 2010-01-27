@@ -36,3 +36,13 @@ src_install() {
 	insinto /etc/yukon/system
 	newins sysconf default
 }
+
+pkg_postinst() {
+	echo
+	einfo "If you get a \"Cannot seek backward in linear streams! Seek failed.\""
+	einfo "error message, try adding this to your mplayer config file"
+	einfo "(\$HOME/.mplayer/config):"
+	einfo ""
+	einfo "cache=8192"
+	echo
+}
