@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,10 +24,15 @@ src_prepare() {
 
 src_install() {
 	einstall DESTDIR="${D}" || die "Install failed"
+
 	newbin filter seom-filter
+
 	newbin play-stream.sh seom-play
+	dosed 's:\./filter:seom-filter:' usr/bin/seom-play
+
 	insinto /etc
 	doins tools/yukon.conf
+
 	insinto /etc/yukon/system
 	newins sysconf default
 }
