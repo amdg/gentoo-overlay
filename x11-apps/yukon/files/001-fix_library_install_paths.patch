@@ -1,0 +1,26 @@
+diff -urN rewrite.orig/Makefile rewrite/Makefile
+--- rewrite.orig/Makefile	2010-01-27 16:45:07.000000000 +0000
++++ rewrite/Makefile	2010-01-27 16:46:09.000000000 +0000
+@@ -41,16 +41,16 @@
+ 	$(CC) $(CFLAGS) -o $@ $< -lseom
+ 
+ sysconf:
+-	echo 'LDPATH="$(PREFIX)/$(LIBDIR)/yukon"' > $@
++	echo 'LDPATH="$(LIBDIR)/yukon"' > $@
+ 
+-soname = `objdump -x /usr/$(LIBDIR)/$(1) | grep SONAME | awk '{ print $$2 }'`
++soname = `objdump -x $(LIBDIR)/$(1) | grep SONAME | awk '{ print $$2 }'`
+ install: $(LIBS) yukon-core-lib
+-	install -m 755 -d $(DESTDIR)$(PREFIX)/bin $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon
++	install -m 755 -d $(DESTDIR)$(PREFIX)/bin $(DESTDIR)/$(LIBDIR)/yukon
+ 	install -m 755 src/scripts/yukon $(DESTDIR)$(PREFIX)/bin
+-	install -m 755 yukon-core-lib $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon
++	install -m 755 yukon-core-lib $(DESTDIR)$(LIBDIR)/yukon
+ 
+-	$(foreach lib,$(LIBS),ln -sf /usr/$(LIBDIR)/$(lib) $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/$(lib).native;)
+-	$(foreach lib,$(LIBS),install -m 755 $(lib) $(DESTDIR)$(PREFIX)/$(LIBDIR)/yukon/$(call soname,$(lib));)
++	$(foreach lib,$(LIBS),ln -sf $(LIBDIR)/$(lib) $(DESTDIR)$(LIBDIR)/yukon/$(lib).native;)
++	$(foreach lib,$(LIBS),install -m 755 $(lib) $(DESTDIR)$(LIBDIR)/yukon/$(call soname,$(lib));)
+ 
+ clean:
+ 	rm -f $(OBJS) $(LIBS) filter yukon-core-lib sysconf
