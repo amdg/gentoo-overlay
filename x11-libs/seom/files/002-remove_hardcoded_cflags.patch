@@ -1,0 +1,10 @@
+--- seom.orig/configure	2009-09-19 16:18:31.000000000 +0000
++++ seom/configure	2009-09-28 04:48:21.000000000 +0000
+@@ -1,7 +1,6 @@
+ #!/bin/sh
+ 
+ case $(uname -m) in	i*86) ARCH="x86";; x86_64) ARCH="amd64";; *) ARCH="C";; esac
+-CFLAGS="-O3 -W -Wall"
+ PREFIX="/usr/local"
+ 
+ for opt do

@@ -1,0 +1,11 @@
+# ChangeLog for x11-libs/seom
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*seom-9999 (22 Feb 2010)
+
+  22 Feb 2010; Anna Gabutero <amdg@lavabit.com>
+  +files/001-get_version_from_ebuild.patch, +seom-9999.ebuild,
+  +files/002-remove_hardcoded_cflags.patch:
+  x11-libs/seom ebuild (required by yukon)
+
