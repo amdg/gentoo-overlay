@@ -1,0 +1,11 @@
+--- rhd_tmds.c	2008-02-29 17:03:14.000000000 -0500
++++ /root/xf86-video-radeonhd-9999/src/rhd_tmds.c	2008-03-01 13:17:23.000000000 -0500
+@@ -406,7 +406,7 @@
+     Output->Name = "TMDS A";
+     Output->Id = RHD_OUTPUT_TMDSA;
+ 
+-    Output->Sense = TMDSASense;
++    Output->Sense = NULL; //TMDSASense;
+     Output->ModeValid = TMDSAModeValid;
+     Output->Mode = TMDSASet;
+     Output->Power = TMDSAPower;
