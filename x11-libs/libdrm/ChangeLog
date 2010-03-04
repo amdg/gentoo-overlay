@@ -1,0 +1,9 @@
+# ChangeLog for x11-libs/libdrm
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*libdrm-2.4.12 (04 Mar 2010)
+
+  04 Mar 2010; Anna Gabutero <amdg@lavabit.com> +libdrm-2.4.12.ebuild:
+  Old ebuild needed by the fglrx version that still supports Radeon HD 3100
+
