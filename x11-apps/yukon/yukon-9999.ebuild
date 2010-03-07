@@ -40,9 +40,7 @@ src_install() {
 pkg_postinst() {
 	echo
 	einfo "If you get a \"Cannot seek backward in linear streams! Seek failed.\""
-	einfo "error message, try adding this to your mplayer config file"
-	einfo "(\$HOME/.mplayer/config):"
-	einfo ""
-	einfo "cache=8192"
+	einfo "error message, try adding the line \"cache=8192\" to your mplayer"
+	einfo "config file (\$HOME/.mplayer/config)."
 	echo
 }
