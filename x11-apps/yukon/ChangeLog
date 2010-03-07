@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Mar 2010; Anna Gabutero <amdg@lavabit.com> yukon-9999.ebuild:
+  Place default configuration file in the documented location
+  (https://devel.neopsis.com/projects/yukon/wiki/HowTo/Configure)
+
   27 Jan 2010; Anna Gabutero <amdg@lavabit.com> yukon-9999.ebuild:
   Adding note about cache=8192 to make seom-player work
 

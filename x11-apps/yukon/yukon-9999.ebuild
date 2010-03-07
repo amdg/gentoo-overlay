@@ -30,8 +30,8 @@ src_install() {
 	newbin play-stream.sh seom-play
 	dosed 's:\./filter:seom-filter:' usr/bin/seom-play
 
-	insinto /etc
-	doins tools/yukon.conf
+	insinto /etc/yukon
+	newins tools/yukon.conf conf
 
 	insinto /etc/yukon/system
 	newins sysconf default
