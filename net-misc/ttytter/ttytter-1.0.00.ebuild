@@ -4,7 +4,7 @@
 
 inherit eutils versionator
 
-DESCRIPTION="A multi-functional, fully 100% text, Perl command line Twitter client"
+DESCRIPTION="A multi-functional, console-based Twitter client"
 HOMEPAGE="http://www.floodgap.com/software/ttytter/"
 SRC_URI="http://www.floodgap.com/software/ttytter/dist1/${PV}.txt"
 
@@ -14,16 +14,12 @@ KEYWORDS="~amd64"
 IUSE=""
 DEPEND=""
 RDEPEND=">=dev-lang/perl-5.8
-	|| ( >=net-misc/curl-7.19.4 >=www-client/lynx-2.8.6-r2 )"
+	|| ( net-misc/curl www-client/lynx )"
 
 src_unpack() {
-	cp "${DISTDIR}"/${A} "${S}"
-}
-
-src_compile() {
-	return 0
+	cp "${DISTDIR}"/${A} "${S}" || die "Copy failed"
 }
 
 src_install() {
-	newbin "${S}" ttytter
+	newbin "${S}" ttytter || die "Install failed"
 }
