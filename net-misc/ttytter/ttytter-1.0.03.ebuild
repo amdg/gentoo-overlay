@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils versionator
+inherit eutils
 
 DESCRIPTION="A multi-functional, console-based Twitter client"
 HOMEPAGE="http://www.floodgap.com/software/ttytter/"
