@@ -6,7 +6,7 @@ inherit mercurial flag-o-matic
 
 filter-ldflags "-Wl,-O1"
 
-EHG_REPO_URI="http://mercurial.opensound.com"
+EHG_REPO_URI="http://opensound.hg.sourceforge.net:8000/hgroot/opensound/opensound"
 
 DESCRIPTION="Open Sound System - portable, mixing-capable, high quality sound system for Unix."
 HOMEPAGE="http://developer.opensound.com/"
@@ -32,13 +32,13 @@ src_unpack() {
 	epatch "${FILESDIR}/call_ld_with_raw-ldflags.patch" || die "patch failed"
 
 	einfo "Replacing init script with gentoo friendly one..."
-	cp "${FILESDIR}/oss" "${WORKDIR}/mercurial.opensound.com/setup/Linux/oss/etc/S89oss"
+	cp "${FILESDIR}/oss" "${WORKDIR}/opensound/setup/Linux/oss/etc/S89oss"
 }
 
 src_compile() {
 	einfo "Running configure..."
 	cd "${WORKDIR}/build"
-	"${WORKDIR}/mercurial.opensound.com/configure" || die "configure failed"
+	"${WORKDIR}/opensound/configure" || die "configure failed"
 
 	einfo "Stripping compiler flags..."
 	sed -i -e 's/-D_KERNEL//' \
