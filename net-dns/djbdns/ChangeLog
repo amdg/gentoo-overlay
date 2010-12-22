@@ -1,0 +1,19 @@
+# ChangeLog for net-dns/djbdns
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*djbdns-1.05-r23 (06 Nov 2010)
+
+  06 Nov 2010; <daragang@gentoo.org> +files/1.05-errno.patch,
+  +djbdns-1.05-r23.ebuild,
+  +files/CVE2009-0858_0001-check-response-domain-name-length.patch,
+  +files/CVE2008-4392_0001-dnscache-merge-similar-outgoing-queries.patch,
+  +files/CVE2008-4392_0001-dnscache-merge-similar-outgoing-queries-ipv6.patc
+  h, +files/CVE2008-4392_0002-dnscache-cache-soa-records.patch,
+  +files/CVE2008-4392_0002-dnscache-cache-soa-records-ipv6.patch,
+  +files/djbdns-setup, +files/djbdns-setup-r17, +files/dnscache-setup,
+  +files/dnsroots.patch, +files/dnstracesort.patch,
+  +files/fwdzone-fix.patch, +files/headtail.patch, +files/tinydns-setup,
+  +metadata.xml:
+  Create nofiles group
+
